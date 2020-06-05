@@ -8,8 +8,6 @@ A simple Node.js REST API with chai tests to demonstrate API testing:
 - invalid request bodies
 - database CRUD operations (create, list, update, delete todos)
 
----
-
 ## Pre-requisites
 
 - Node.js
