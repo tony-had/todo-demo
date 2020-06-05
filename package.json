@@ -20,7 +20,7 @@
     },
     "scripts": {
         "start": "nodemon src/main",
-        "test": "mocha \"src/**/*.test.js\""
+        "test": "mocha \"src/**/*.test.js\" --timeout 60000"
     },
     "keywords": [
         "rest",
