@@ -1,0 +1,36 @@
+{
+  "name": "todo-demo",
+  "version": "1.0.0",
+  "description": "Small To-Do list REST API with tests for demonstration purposes.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.8"
+  },
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "get-port": "^5.1.1",
+    "mocha": "^7.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon src/main",
+    "test": "mocha \"src/**/*.test.js\""
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "todo",
+    "test"
+  ],
+  "author": "Tony Hadjiivanov",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": true,
+    "semi": true
+  }
+}
