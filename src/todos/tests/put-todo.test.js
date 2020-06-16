@@ -1,8 +1,47 @@
-const chai = require('chai'),
-    chaiHttp = require('chai-http');
+/** Tests for the unsupported PUT method at the /todos endpoint
+ * <ol>
+ *   <li>Checks the response to a PUT request has the expected headers:
+ *     <ul>
+ *      <li>Access-Control-Allow-Origin: *</li>
+ *      <li>Access-Control-Allow-Headers: X-Requested-With,
+ *          X-HTTP-Method-Override, Content-Type, Accept</li>
+ *      <li>Allow: GET, POST, PATCH, DELETE, OPTIONS, HEAD</li>
+ *     </ul>
+ *   </li>
+ *   <li>Checks that a 405 Forbidden is returned when attempting a PUT request.
+ *   </li>
+ * </ol>
+ *
+ * @module tests/put-todo
+ * @requires chai
+ * @requires chai-http
+ * @requires test-helpers/test-server
+ */
+
+/**
+ * chai module
+ * @const
+ */
+const chai = require('chai');
+
+/**
+ * chai-http module
+ * @const
+ */
+const chaiHttp = require('chai-http');
+
+/**
+ * test-server module
+ * @const
+ */
 const testServer = require('../../test-helpers/test-server');
 
 chai.use(chaiHttp);
+
+/**
+ * Chai expect object
+ * @const
+ */
 const expect = chai.expect;
 
 describe('PUT /todos', function() {

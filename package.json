@@ -15,12 +15,14 @@
         "chai-as-promised": "^7.1.1",
         "chai-http": "^4.3.0",
         "get-port": "^5.1.1",
+        "jsdoc": "^3.6.4",
         "mocha": "^7.2.0",
         "nodemon": "^2.0.4"
     },
     "scripts": {
         "start": "nodemon src/main",
-        "test": "mocha \"src/**/*.test.js\" --timeout 60000"
+        "test": "mocha \"src/**/*.test.js\" --timeout 60000",
+        "docs": "jsdoc -r src -R ./README.md -d docs"
     },
     "keywords": [
         "rest",
@@ -32,6 +34,8 @@
     "license": "ISC",
     "prettier": {
         "singleQuote": true,
-        "semi": true
+        "semi": true,
+        "printWidth": 80,
+        "tabWidth": 4
     }
 }

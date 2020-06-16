@@ -1,0 +1,2705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: tests/delete-todo</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: tests/delete-todo</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Tests for deleting an existing todo at the /todos endpoint
+<ol>
+  <li>Checks the response to a DELETE request has the expected headers:
+    <ul>
+     <li>Access-Control-Allow-Origin: *</li>
+     <li>Access-Control-Allow-Headers: X-Requested-With,
+         X-HTTP-Method-Override, Content-Type, Accept</li>
+    </ul>
+  </li>
+  <li>Checks that a 404 ResourceNotFoundError is returned if deleting a todo
+      with a non-existent id.</li>
+  <li>Checks that a 204 status and no content are returned when successfully
+      deleting a todo.</li>
+  <li>Checks that the deleted todo is actually removed from the
+      database.</li>
+</ol></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:chai</li>
+        
+            <li>module:chai-http</li>
+        
+            <li>module:mongodb</li>
+        
+            <li><a href="module-test-helpers_test-server.html">module:test-helpers/test-server</a></li>
+        
+            <li><a href="module-test-helpers_test-db.html">module:test-helpers/test-db</a></li>
+        
+            <li><a href="module-test-helpers_assert-response.html">module:test-helpers/assert-response</a></li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~assertResponse"><span class="type-signature">(inner, constant) </span>assertResponse<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    assert-response module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~assertResponse"><span class="type-signature">(inner, constant) </span>assertResponse<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    assert-response module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chai"><span class="type-signature">(inner, constant) </span>chai<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chai"><span class="type-signature">(inner, constant) </span>chai<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chaiHttp"><span class="type-signature">(inner, constant) </span>chaiHttp<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai-http module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chaiHttp"><span class="type-signature">(inner, constant) </span>chaiHttp<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai-http module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~expect"><span class="type-signature">(inner, constant) </span>expect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Chai expect object
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~expect"><span class="type-signature">(inner, constant) </span>expect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Chai expect object
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testDb"><span class="type-signature">(inner, constant) </span>testDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-db module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testDb"><span class="type-signature">(inner, constant) </span>testDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-db module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testServer"><span class="type-signature">(inner, constant) </span>testServer<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-server module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testServer"><span class="type-signature">(inner, constant) </span>testServer<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-server module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createTodo"><span class="type-signature">(async, inner) </span>createTodo<span class="signature">(mochaContext, todoData)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a new todo in the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mochaContext</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">mocha context providing access to the api for
+                                calls and the database</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>todoData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">todo object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createTodo"><span class="type-signature">(async, inner) </span>createTodo<span class="signature">(mochaContext, todoData)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a new todo in the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mochaContext</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">mocha context providing access to the api for
+                                calls and the database</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>todoData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">todo object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Tests for deleting an existing todo at the /todos endpoint
+<ol>
+  <li>Checks the response to a PATCH request has the expected headers:
+    <ul>
+     <li>Access-Control-Allow-Origin: *</li>
+     <li>Access-Control-Allow-Headers: X-Requested-With,
+         X-HTTP-Method-Override, Content-Type, Accept</li>
+    </ul>
+  </li>
+  <li>Checks that a 404 ResourceNotFoundError is returned if patching a todo
+      with a non-existent id.</li>
+  <li>Checks that a 204 status and no content are returned when successfully
+      deleting a todo.</li>
+  <li>Checks that the deleted todo is actually removed from the
+      database.</li>
+</ol></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:chai</li>
+        
+            <li>module:chai-http</li>
+        
+            <li>module:mongodb</li>
+        
+            <li><a href="module-test-helpers_test-server.html">module:test-helpers/test-server</a></li>
+        
+            <li><a href="module-test-helpers_test-db.html">module:test-helpers/test-db</a></li>
+        
+            <li><a href="module-test-helpers_assert-response.html">module:test-helpers/assert-response</a></li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~assertResponse"><span class="type-signature">(inner, constant) </span>assertResponse<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    assert-response module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~assertResponse"><span class="type-signature">(inner, constant) </span>assertResponse<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    assert-response module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chai"><span class="type-signature">(inner, constant) </span>chai<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chai"><span class="type-signature">(inner, constant) </span>chai<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chaiHttp"><span class="type-signature">(inner, constant) </span>chaiHttp<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai-http module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~chaiHttp"><span class="type-signature">(inner, constant) </span>chaiHttp<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    chai-http module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~expect"><span class="type-signature">(inner, constant) </span>expect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Chai expect object
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~expect"><span class="type-signature">(inner, constant) </span>expect<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Chai expect object
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testDb"><span class="type-signature">(inner, constant) </span>testDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-db module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testDb"><span class="type-signature">(inner, constant) </span>testDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-db module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testServer"><span class="type-signature">(inner, constant) </span>testServer<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-server module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~testServer"><span class="type-signature">(inner, constant) </span>testServer<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    test-server module
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createTodo"><span class="type-signature">(async, inner) </span>createTodo<span class="signature">(mochaContext, todoData)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a new todo in the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mochaContext</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">mocha context providing access to the api for
+                                calls and the database</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>todoData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">todo object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_delete-todo.test.js.html">todos/tests/delete-todo.test.js</a>, <a href="todos_tests_delete-todo.test.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createTodo"><span class="type-signature">(async, inner) </span>createTodo<span class="signature">(mochaContext, todoData)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a new todo in the database.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mochaContext</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">mocha context providing access to the api for
+                                calls and the database</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>todoData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">todo object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="todos_tests_patch-todo.test.js.html">todos/tests/patch-todo.test.js</a>, <a href="todos_tests_patch-todo.test.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-errors_ResourceNotFoundError.html">errors/ResourceNotFoundError</a></li><li><a href="module-errors_ValidationError.html">errors/ValidationError</a></li><li><a href="module-main.html">main</a></li><li><a href="module-routes.html">routes</a></li><li><a href="module-test-helpers_assert-response.html">test-helpers/assert-response</a></li><li><a href="module-test-helpers_test-db.html">test-helpers/test-db</a></li><li><a href="module-test-helpers_test-server.html">test-helpers/test-server</a></li><li><a href="module-tests_create-todo.html">tests/create-todo</a></li><li><a href="module-tests_delete-todo.html">tests/delete-todo</a></li><li><a href="module-tests_list-todos.html">tests/list-todos</a></li><li><a href="module-tests_misc-todo.html">tests/misc-todo</a></li><li><a href="module-tests_put-todo.html">tests/put-todo</a></li><li><a href="module-TodosService.html">TodosService</a></li></ul><h3>Classes</h3><ul><li><a href="module-errors_ResourceNotFoundError-ResourceNotFoundError.html">ResourceNotFoundError</a></li><li><a href="module-errors_ValidationError-ValidationError.html">ValidationError</a></li><li><a href="module-TodosService-TodosService.html">TodosService</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 16 2020 11:20:27 GMT+0300 (EEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

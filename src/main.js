@@ -1,18 +1,73 @@
+/** Entry point for the todo REST API
+ * @module main
+ * @requires express
+ * @requires mongodb
+ * @requires body-parser
+ * @requires errors/ValidationError
+ * @requires errors/ResourceNotFoundError
+ */
+
+/**
+ * express module
+ * @const
+ */
 const express = require('express');
+
+/**
+ * Mongo DB client
+ * @type {object}
+ * @const
+ */
 const { MongoClient } = require('mongodb');
+
+/**
+ * body-parser module
+ * @const
+ */
 const bodyParser = require('body-parser');
+
+/**
+ * ValidationError to be thrown when a body fails validation
+ * @const
+ */
 const ValidationError = require('./errors/ValidationError');
+
+/**
+ * ResourceNotFoundError to be thrown when a todo is not found
+ * @const
+ */
 const ResourceNotFoundError = require('./errors/ResourceNotFoundError');
 
+/**
+ * Port on which to serve
+ * @type {Number}
+ * @const
+ */
 const PORT = process.env.PORT || 3000;
+
 // TODO: move credentials to environment variables
+
+/**
+ * The URI of the todo Mongo DB. The default is the todo-demo Mongo DB Atlas URI
+ * @type {String}
+ * @const
+ */
 const MONGODB_URI =
     process.env.MONGODB_URI ||
     'mongodb+srv://resty-testy:resty-testy@supply-store-db-trr6k.mongodb.net/todo-demo?retryWrites=true&w=majority';
+
+/**
+ * Name of the todo database. The default is todo-demo
+ * @type {String}
+ * @const
+ */
 const MONGODB_DB = process.env.MONGODB_DB || 'todo-demo';
 
 main();
 
+/**
+ * Main function that wraps the middleware set-up of the server.
+ */
 async function main() {
     const mongoClient = await MongoClient.connect(MONGODB_URI, {
         useNewUrlParser: true,

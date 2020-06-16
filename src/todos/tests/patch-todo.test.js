@@ -1,13 +1,80 @@
-const chai = require('chai'),
-    chaiHttp = require('chai-http');
+/** Tests for deleting an existing todo at the /todos endpoint
+ * <ol>
+ *   <li>Checks the response to a PATCH request has the expected headers:
+ *     <ul>
+ *      <li>Access-Control-Allow-Origin: *</li>
+ *      <li>Access-Control-Allow-Headers: X-Requested-With,
+ *          X-HTTP-Method-Override, Content-Type, Accept</li>
+ *     </ul>
+ *   </li>
+ *   <li>Checks that a 404 ResourceNotFoundError is returned if patching a todo
+ *       with a non-existent id.</li>
+ *   <li>Checks that a 204 status and no content are returned when successfully
+ *       deleting a todo.</li>
+ *   <li>Checks that the deleted todo is actually removed from the
+ *       database.</li>
+ * </ol>
+ *
+ * @module tests/delete-todo
+ * @requires chai
+ * @requires chai-http
+ * @requires mongodb
+ * @requires test-helpers/test-server
+ * @requires test-helpers/test-db
+ * @requires test-helpers/assert-response
+ */
+
+/**
+ * chai module
+ * @const
+ */
+const chai = require('chai');
+
+/**
+ * chai-http module
+ * @const
+ */
+const chaiHttp = require('chai-http');
+
+/**
+ * ObjectId type from mongodb
+ * @const
+ */
 const { ObjectId } = require('mongodb');
+
+/**
+ * test-server module
+ * @const
+ */
 const testServer = require('../../test-helpers/test-server');
+
+/**
+ * test-db module
+ * @const
+ */
 const testDb = require('../../test-helpers/test-db');
+
+/**
+ * assert-response module
+ * @const
+ */
 const assertResponse = require('../../test-helpers/assert-response');
 
 chai.use(chaiHttp);
+
+/**
+ * Chai expect object
+ * @const
+ */
 const expect = chai.expect;
 
+// TODO: move createTodo function to utils module
+/**
+ * Create a new todo in the database.
+ * @param  {Object} mochaContext - mocha context providing access to the api for
+ *                                 calls and the database
+ * @param  {Object} todoData={} - todo object
+ */
 async function createTodo(mochaContext, todoData = {}) {
     const { api, db } = mochaContext;
 
@@ -151,7 +218,9 @@ describe('PATCH /todos/:todoId', function() {
             title: 'My Updated Todo',
         });
 
-        const updatedTodo = await db.collection('todos').findOne({ _id: todo._id });
+        const updatedTodo = await db
+            .collection('todos')
+            .findOne({ _id: todo._id });
 
         expect(updatedTodo).to.have.property('completed', true);
         expect(updatedTodo).to.have.property('title', 'My Updated Todo');
